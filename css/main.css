@@ -198,11 +198,14 @@ nav {
 }
 
 .explore-button {
+  position: absolute;
+  bottom: 4.8em;
+  left: 50%;
+  transform: translateX(-50%);
   width: 15em;
   height: 15em;
   border-radius: 15em;
   background: var(--white);
-  margin: 8.1em auto 0 auto;
 }
 
 .explore-button p {
@@ -213,4 +216,8 @@ nav {
   text-align: center;
   text-transform: uppercase;
   color: var(--chinese-black);
+}
+
+.explore-button:hover {
+  outline: 3em solid hsla(0, 0%, 0%, 0.1);
 }
