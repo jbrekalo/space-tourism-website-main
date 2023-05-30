@@ -163,6 +163,8 @@ nav {
 }
 
 .nav-item {
+  display: flex;
+  align-items: center;
   font-family: "Barlow Condensed", sans-serif;
   font-size: 1.6rem;
   line-height: 1.9rem;
@@ -170,6 +172,24 @@ nav {
   text-transform: uppercase;
   list-style: none;
   margin-bottom: 3.2rem;
+}
+
+.nav-item.active::after {
+  position: absolute;
+  right: 0;
+  content: "";
+  height: 31px;
+  width: 4px;
+  background: var(--white);
+}
+
+.nav-item:hover::after {
+  position: absolute;
+  right: 0;
+  content: "";
+  height: 31px;
+  width: 4px;
+  background: hsla(0, 0%, 100%, 0.1);
 }
 
 .nav-link {
@@ -212,6 +232,7 @@ nav {
   height: 15em;
   border-radius: 15em;
   background: var(--white);
+  outline: 0 solid hsla(0, 0%, 100%, 0.1);
 }
 
 .explore-button p {
@@ -225,8 +246,19 @@ nav {
 }
 
 .explore-button:hover {
-  outline: 3em solid hsla(0, 0%, 0%, 0.1);
+  outline: 3em solid hsla(0, 0%, 100%, 0.1);
+  transition: 200ms;
 }
+
+/* 
+
+
+#######################
+## Responsive layout ##
+####################### 
+
+
+*/
 
 @media only screen and (min-width: 768px) {
   h1 {
@@ -265,10 +297,11 @@ nav {
   }
 
   nav {
+    display: flex;
     position: relative;
     width: auto;
     height: 9.6em;
-    padding: 3.9em 4.6em 3.9em 4.8em;
+    padding: 0 4.6em 0 4.8em;
     transform: none;
     transition: none;
   }
@@ -277,13 +310,34 @@ nav {
     display: flex;
     justify-content: space-between;
     width: 35.6em;
-    margin: 0;
+    height: auto;
+    margin-top: 3.9em;
     color: var(--white);
   }
 
   .nav-item {
+    flex-direction: column;
     padding: 0;
     margin-bottom: 0;
+    letter-spacing: 0.23625rem;
+  }
+
+  .nav-item.active::after {
+    position: relative;
+    content: "";
+    height: 3px;
+    width: 100%;
+    margin-top: auto;
+    background: var(--white);
+  }
+
+  .nav-item:hover::after {
+    position: relative;
+    content: "";
+    height: 3px;
+    width: 100%;
+    margin-top: auto;
+    background: hsla(0, 0%, 100%, 0.1);
   }
 
   .nav-number,
@@ -319,10 +373,12 @@ nav {
     font-size: 3.2rem;
     line-height: 3.7rem;
     letter-spacing: 2px;
+    outline: 0 solid hsla(0, 0%, 100%, 0.1);
   }
 
   .explore-button:hover {
-    outline: 4em solid hsla(0, 0%, 0%, 0.1);
+    outline: 4em solid hsla(0, 0%, 100%, 0.1);
+    transition: 200ms;
   }
 }
 
@@ -381,7 +437,6 @@ nav {
 
   nav {
     display: flex;
-    align-items: center;
     position: relative;
     width: 83em;
     height: 9.6em;
@@ -434,6 +489,7 @@ nav {
     width: 24.2em;
     height: 24.2em;
     border-radius: 24.2em;
+    outline: 0 solid hsla(0, 0%, 100%, 0.1);
   }
 
   .explore-button p {
@@ -443,6 +499,7 @@ nav {
   }
 
   .explore-button:hover {
-    outline: 4em solid hsla(0, 0%, 0%, 0.1);
+    outline: 4em solid hsla(0, 0%, 100%, 0.1);
+    transition: 200ms;
   }
 }
